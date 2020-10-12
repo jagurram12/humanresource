@@ -2,16 +2,22 @@ pipeline{
 	agent any
 	stages{
 		stage("Compile"){
-			echo "Compiling the source"
-			sh "mvn clean compile"
+			steps{
+				echo "Compiling the source"
+				sh "mvn clean compile"
+			}
 		}
 		stage("Unit Test"){
-			echo "Executing unit tests"
-			sh "mvn test"
+			steps{
+				echo "Executing unit tests"
+				sh "mvn test"
+			}
 		}
 		stage ("Build"){
-			echo "Building the source"
-			sh "mvn install"
+			steps{
+				echo "Building the source"
+				sh "mvn install"
+			}
 		}
 	}
 	
