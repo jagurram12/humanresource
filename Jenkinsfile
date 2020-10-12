@@ -8,7 +8,7 @@ pipeline{
 		stage("Compile"){
 			steps{
 				echo "Compiling the source"
-				bat "mvn clean compile"
+				bat "mvn -DskipTests -Dmaven.test.skip=true clean compile"
 			}
 		}
 		stage("Unit Test"){
@@ -20,7 +20,7 @@ pipeline{
 		stage ("Build"){
 			steps{
 				echo "Building the source"
-				bat "mvn install"
+				bat "mvn -DskipTests -Dmaven.test.skip=true install"
 			}
 		}
 	}
