@@ -21,7 +21,7 @@ pipeline{
 			steps{
 				echo "Building the source"
 				bat "mvn -DskipTests -Dmaven.test.skip=true install"
-				bat "docker build -t hr-app:1.0 ."
+				bat "docker build -t jagurram12/hr-app:1.0 ."
 			}
 		}
 	}
