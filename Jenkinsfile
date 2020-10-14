@@ -4,6 +4,9 @@ pipeline{
 		maven "maven3.6.3"
 		jdk "java8"
 	}
+	options {
+    	skipDefaultCheckout true
+  	}
 	environment{
 		registry = "jagurram12/hr-app"
 	    registryCredential = 'dockerhub'
